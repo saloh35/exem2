@@ -1,0 +1,32 @@
+button,
+.button {
+    font-family: 'Jost', sans-serif;
+    width: 15.2rem;
+    height: 5.6rem;
+    line-height: 5.6rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: v(f500);
+    border-radius: 0.8rem;
+    z-index: 500; 
+    text-transform: uppercase;
+
+    &.light {
+        background: v(white);
+        color: v(dark-grey);
+    }
+
+    &.dark {
+        background: v(peach);
+        color: v(white);
+    }
+
+    &:hover,
+    .light:hover,
+    .dark:hover {
+        cursor: pointer;
+        background: v(light-peach);
+        color: v(white);
+    }
+}

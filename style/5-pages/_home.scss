@@ -1,0 +1,130 @@
+.home__hero {
+    background: v(peach);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8rem 11.8rem 1.4rem 10rem 2.4rem 5.6rem 1fr;
+    grid-template-areas: 
+    "....."
+    "title"
+    "....."
+    "context"
+    "....."
+    "button"
+    "....."
+    ;
+    justify-items: center;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    @include breakpoint(tablet){
+        border-radius: 1.5rem;
+        grid-template-rows: 6.1rem 13.7rem 3.6rem 7.1rem 2.6rem 5.6rem 1fr;
+        grid-template-areas: 
+        "....."
+        "title"
+        "....."
+        "context"
+        "....."
+        "button"
+        "....."
+        ;
+    }
+
+    @include breakpoint(desktop){
+        grid-template-rows: 14.5rem 13.7rem 3.7rem 7.1rem 4.7rem 5.6rem 14.5rem;
+        grid-template-columns: 9.5rem 47.5rem 1fr;
+        grid-template-areas: 
+        "...    ...   ..."
+        "...  title   ..."
+        "...   ...    ..."
+        "... context  ..."
+        "...   ...    ..."
+        "...  button  ..."
+        "...   ...    ...";        
+        justify-items: left;
+    }
+
+    .hero__title {grid-area: title;}
+    .hero__context { grid-area: context;}
+    .hero__button {grid-area: button;}
+
+    //*******END OF LAYOUT**********
+
+    //giving a higher z-index so background images are not selected by accident.
+    .hero__title,
+    .hero__context,
+    .hero__button {
+        z-index: 5;
+    }
+    
+    .hero__title,
+    .hero__context {
+        color: v(white);
+        max-width: 32.7rem;
+        text-align: center;
+    }
+
+    .hero__title {
+        @include breakpoint(tablet) {
+            max-width: 57.3rem;
+        }
+
+        @include breakpoint(desktop){
+            max-width: 47.5rem;
+            text-align: left;
+        }
+    }
+
+    .hero__context {
+        @include breakpoint(tablet) {
+            max-width: 44.5rem;
+        }
+        @include breakpoint(desktop){
+            max-width: 43.5rem;
+            text-align: left;
+        }
+    }
+
+    .hero__bk-img {
+        width: 64rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: 0;
+
+        @include breakpoint(tablet) {
+            left: unset;
+            right: -8.5rem;
+            top: 10.2rem;
+            transform: translateY(0%);
+        }
+
+        @include breakpoint(desktop) {
+            right: 0;
+            left: unset;
+            top: 0;
+            transform: translateY(0%);
+
+        }
+
+    }
+
+    .hero__phone-img {
+        position: absolute;
+        bottom: -36rem;
+        z-index: 0;
+
+        @include breakpoint(desktop) {
+            right: -8rem;
+            bottom: -24rem;
+        }
+    }
+}
+
+//My project-type-cards SCSS is elsewhere (see components)
+
+//My about-cards SCSS is elsewhere (see components)
+    //about-cards are VERY similar to location cards.
+    //They share the same file.

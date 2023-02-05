@@ -1,0 +1,42 @@
+main {
+
+    //The columns for all pages are identical. 
+    //This can be found in 3-layout/_sharedMain
+
+    //Study grid-areas in order to understand the structure.
+    &.__web-design {
+
+        //Mobile
+        grid-template-rows: 32rem 306.8rem 52.4rem 0.1rem;
+        row-gap: 9.6rem;
+        grid-template-areas: 
+        "hero    hero     hero"
+        "...   project-cards  ..."
+        "...  project-type-cards ..."
+        "...   .......     ...";
+
+        @include breakpoint(tablet){
+            grid-template-rows: 25.2rem 203rem 42.4rem 0.1rem;
+            row-gap: 12rem;
+            grid-template-areas:
+            "...     hero      ..."
+            "...   project-cards  ..."
+            "...  project-type-cards ..."
+            "...       ...     ...";
+        }
+
+        @include breakpoint(desktop) {
+            grid-template-rows: 25.2rem 98.8rem 30.8rem 0.1rem;
+            grid-template-areas:
+            "hero"
+            "project-cards"
+            "project-type-cards"
+            ".";
+        }
+
+        .shared__hero { grid-area: hero; }
+        .project-type-cards {grid-area: project-type-cards; }
+        .project-cards { grid-area: project-cards; }
+    }
+
+}
